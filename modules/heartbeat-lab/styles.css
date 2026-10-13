@@ -57,7 +57,7 @@ a { color: inherit; }
 .hero .eyebrow { margin-bottom: 22px; }
 .pulse, .live-dot { width: 7px; aspect-ratio: 1; border-radius: 50%; background: var(--mint); box-shadow: 0 0 15px var(--mint); }
 h1, h2, h3, p { margin-top: 0; }
-h1 { margin: 22px 0; font: 500 clamp(40px, 7.4vw, 78px)/1.08 Unbounded, sans-serif; letter-spacing: -.065em; }
+h1 { margin: 22px 0; font: 500 clamp(34px, 6vw, 64px)/1.08 Unbounded, sans-serif; letter-spacing: -.065em; }
 .hero h1 { margin: 0 0 22px; }
 .title-accent { color: var(--mint); }
 .hero-copy { max-width: 670px; margin-bottom: 0; color: var(--muted); font-size: clamp(16px, 2vw, 19px); line-height: 1.7; }
