@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="Explore le neurone, la transmission synaptique et la plasticité grâce à des expériences interactives.">
+  <title>Neuro Map — Human Body</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="https://human-body-hub.pages.dev/" aria-label="Human Body, retour à la collection" data-fr-aria-label="Human Body, retour à la collection" data-en-aria-label="Human Body, back to the collection">
+        <span class="brand-mark" aria-hidden="true">HB</span>
+        <span>Human Body <span class="brand-divider">/</span> <span class="brand-module">Neuro Map</span></span>
+      </a>
+      <a class="collection-link" href="https://human-body-hub.pages.dev/" data-fr="← Collection" data-en="← Collection">← Collection</a>
+    </div>
+    <div class="subnav">
+      <div class="wrap subnav-inner">
+        <nav class="module-nav" aria-label="Navigation du module" data-fr-aria-label="Navigation du module" data-en-aria-label="Module navigation">
+          <a href="#neuron" data-fr="Neurone" data-en="Neuron">Neurone</a>
+          <a href="#synapse" data-fr="Synapse" data-en="Synapse">Synapse</a>
+          <a href="#memory" data-fr="Mémoire" data-en="Memory">Mémoire</a>
+          <a href="#sources" data-fr="Sources" data-en="Sources">Sources</a>
+        </nav>
+        <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch to English">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow"><span class="pulse" aria-hidden="true"></span><span data-fr="CARTOGRAPHIE NEURONALE · MODULE 03" data-en="NEURAL MAPPING · MODULE 03">CARTOGRAPHIE NEURONALE · MODULE 03</span></p>
+      <h1 id="page-title"><span data-fr="Un signal," data-en="One signal,">Un signal,</span><br><span class="title-accent" data-fr="des milliards de connexions." data-en="billions of connections.">des milliards de connexions.</span></h1>
+      <p class="hero-copy" data-fr="Suis un message dans un neurone, traverse une synapse et découvre comment les connexions du cerveau peuvent évoluer avec l’expérience." data-en="Follow a message through a neuron, cross a synapse, and discover how the brain's connections can change with experience.">Suis un message dans un neurone, traverse une synapse et découvre comment les connexions du cerveau peuvent évoluer avec l’expérience.</p>
+    </section>
+
+    <section class="section" id="neuron" aria-labelledby="neuron-title">
+      <div class="section-heading">
+        <div>
+          <p class="kicker" data-fr="01 / LE NEURONE" data-en="01 / THE NEURON">01 / LE NEURONE</p>
+          <h2 id="neuron-title" data-fr="Une cellule, un long message" data-en="One cell, a long message">Une cellule, un long message</h2>
+        </div>
+        <span class="section-index">01 — 03</span>
+      </div>
+      <div class="neuron-layout">
+        <article class="panel neuron-panel">
+          <div class="panel-heading">
+            <span class="live-label"><span class="live-dot" aria-hidden="true"></span><span data-fr="SCHÉMA INTERACTIF" data-en="INTERACTIVE DIAGRAM">SCHÉMA INTERACTIF</span></span>
+            <button class="action-button" id="fire-signal" type="button" data-fr="Déclencher un signal" data-en="Send a signal">Déclencher un signal</button>
+          </div>
+          <svg class="neuron-svg" id="neuron-svg" data-focus="dendrites" viewBox="0 0 780 310" role="img" aria-labelledby="neuron-svg-title neuron-svg-desc">
+            <title id="neuron-svg-title" data-fr="Schéma d’un neurone communiquant avec une autre cellule" data-en="Diagram of a neuron communicating with another cell">Schéma d’un neurone communiquant avec une autre cellule</title>
+            <desc id="neuron-svg-desc" data-fr="Les dendrites reçoivent des signaux. Un signal électrique se propage du corps cellulaire le long de l’axone jusqu’aux terminaisons, puis des messagers chimiques traversent la synapse." data-en="Dendrites receive signals. An electrical signal travels from the cell body down the axon to the terminals, where chemical messengers cross the synapse.">Les dendrites reçoivent des signaux. Un signal électrique se propage du corps cellulaire le long de l’axone jusqu’aux terminaisons, puis des messagers chimiques traversent la synapse.</desc>
+            <defs>
+              <linearGradient id="axon-gradient"><stop stop-color="#9f8cff"/><stop offset="1" stop-color="#35f0d2"/></linearGradient>
+              <filter id="soft-glow"><feGaussianBlur stdDeviation="5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <g class="dendrites">
+              <path d="M180 155 105 155 66 117M106 155 60 187M111 155 82 224M130 153 118 94M84 135 72 92M75 117 42 98M60 187 34 207M82 224 70 252M118 94 105 64" />
+              <circle cx="41" cy="97" r="4"/><circle cx="33" cy="208" r="4"/><circle cx="70" cy="253" r="4"/><circle cx="105" cy="63" r="4"/>
+            </g>
+            <circle class="soma" cx="208" cy="155" r="39"/>
+            <circle class="nucleus" cx="208" cy="155" r="13"/>
+            <path class="axon" d="M247 155H624"/>
+            <g class="myelin">
+              <rect x="286" y="139" width="62" height="32" rx="16"/><rect x="368" y="139" width="62" height="32" rx="16"/>
+              <rect x="450" y="139" width="62" height="32" rx="16"/><rect x="532" y="139" width="62" height="32" rx="16"/>
+            </g>
+            <path class="axon-branch" d="M624 155 657 130M624 155 657 180"/>
+            <circle class="terminal" cx="662" cy="127" r="8"/><circle class="terminal" cx="662" cy="183" r="8"/>
+            <path class="synapse-gap" d="M676 127h32m-32 56h32"/>
+            <path class="receiving-cell" d="M712 112v30m0 30v24m0-24 26-14m-26 14-20 18"/>
+            <circle class="signal-dot" cx="250" cy="155" r="7"/>
+            <g class="labels">
+              <text x="82" y="286" data-fr="DENDRITES" data-en="DENDRITES">DENDRITES</text>
+              <text x="179" y="220" data-fr="CORPS CELLULAIRE" data-en="CELL BODY">CORPS CELLULAIRE</text>
+              <text x="420" y="205" data-fr="AXONE" data-en="AXON">AXONE</text>
+              <text x="622" y="235" data-fr="SYNAPSE" data-en="SYNAPSE">SYNAPSE</text>
+            </g>
+            <g class="transmitters" aria-hidden="true"><circle cx="682" cy="139" r="4"/><circle cx="692" cy="155" r="4"/><circle cx="681" cy="170" r="4"/></g>
+          </svg>
+          <p class="signal-status" id="signal-status" role="status" aria-live="polite" data-fr="Prêt à transmettre un signal." data-en="Ready to send a signal.">Prêt à transmettre un signal.</p>
+        </article>
+        <aside class="panel parts-panel" aria-labelledby="parts-title">
+          <p class="kicker" data-fr="ZOOM" data-en="EXPLORE">ZOOM</p>
+          <h3 id="parts-title" data-fr="Les pièces du neurone" data-en="Parts of a neuron">Les pièces du neurone</h3>
+          <div class="part-tabs" role="group" aria-label="Parties du neurone" data-fr-aria-label="Parties du neurone" data-en-aria-label="Parts of the neuron">
+            <button class="part-tab is-active" type="button" data-part="dendrites" aria-pressed="true" data-fr="Dendrites" data-en="Dendrites">Dendrites</button>
+            <button class="part-tab" type="button" data-part="soma" aria-pressed="false" data-fr="Corps cellulaire" data-en="Cell body">Corps cellulaire</button>
+            <button class="part-tab" type="button" data-part="axon" aria-pressed="false" data-fr="Axone" data-en="Axon">Axone</button>
+            <button class="part-tab" type="button" data-part="synapse" aria-pressed="false" data-fr="Terminaisons" data-en="Terminals">Terminaisons</button>
+          </div>
+          <p id="part-description" class="part-description" data-fr="Les dendrites reçoivent des signaux provenant d’autres cellules et les conduisent vers le corps cellulaire." data-en="Dendrites receive signals from other cells and carry them toward the cell body.">Les dendrites reçoivent des signaux provenant d’autres cellules et les conduisent vers le corps cellulaire.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="synapse" aria-labelledby="synapse-title">
+      <div class="section-heading">
+        <div>
+          <p class="kicker" data-fr="02 / LA SYNAPSE" data-en="02 / THE SYNAPSE">02 / LA SYNAPSE</p>
+          <h2 id="synapse-title" data-fr="Un passage de relais chimique" data-en="A chemical hand-off">Un passage de relais chimique</h2>
+        </div>
+        <span class="section-index">02 — 03</span>
+      </div>
+      <div class="synapse-layout">
+        <article class="panel synapse-panel">
+          <div class="synapse-visual" aria-hidden="true">
+            <div class="synapse-cell pre-cell"><span data-fr="Cellule émettrice" data-en="Sending cell">Cellule émettrice</span><div class="vesicles"><i></i><i></i><i></i></div></div>
+            <div class="cleft"><span class="transmitter">●</span><span class="transmitter">●</span><span class="transmitter">●</span><span class="transmitter">●</span><span class="transmitter">●</span></div>
+            <div class="synapse-cell post-cell"><span data-fr="Cellule réceptrice" data-en="Receiving cell">Cellule réceptrice</span><div class="receptors"><i></i><i></i><i></i></div></div>
+          </div>
+          <ol class="steps">
+            <li data-fr="Le signal électrique atteint la terminaison du neurone." data-en="An electrical signal reaches the neuron's terminal.">Le signal électrique atteint la terminaison du neurone.</li>
+            <li data-fr="Des neurotransmetteurs sont libérés dans l’espace synaptique." data-en="Neurotransmitters are released into the synaptic cleft.">Des neurotransmetteurs sont libérés dans l’espace synaptique.</li>
+            <li data-fr="En se liant à des récepteurs, ils modifient l’activité de la cellule suivante." data-en="By binding to receptors, they change the activity of the next cell.">En se liant à des récepteurs, ils modifient l’activité de la cellule suivante.</li>
+          </ol>
+        </article>
+        <aside class="panel synapse-note">
+          <span class="note-icon" aria-hidden="true">↔</span>
+          <h3 data-fr="Une communication à double effet" data-en="A message with different effects">Une communication à double effet</h3>
+          <p data-fr="Selon le neurotransmetteur, le récepteur et le contexte, le message peut augmenter ou diminuer la probabilité que la cellule suivante s’active." data-en="Depending on the neurotransmitter, receptor, and context, a message can increase or decrease the chance that the next cell becomes active.">Selon le neurotransmetteur, le récepteur et le contexte, le message peut augmenter ou diminuer la probabilité que la cellule suivante s’active.</p>
+          <p class="small-note" data-fr="Le schéma simplifie une transmission qui peut aussi être électrique, et qui est régulée de plusieurs façons." data-en="This diagram simplifies a process that can also be electrical and is regulated in several ways.">Le schéma simplifie une transmission qui peut aussi être électrique, et qui est régulée de plusieurs façons.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="memory" aria-labelledby="memory-title">
+      <div class="section-heading">
+        <div>
+          <p class="kicker" data-fr="03 / LA PLASTICITÉ" data-en="03 / PLASTICITY">03 / LA PLASTICITÉ</p>
+          <h2 id="memory-title" data-fr="Quand les connexions changent" data-en="When connections change">Quand les connexions changent</h2>
+        </div>
+        <span class="section-index">03 — 03</span>
+      </div>
+      <div class="memory-layout">
+        <article class="panel memory-panel">
+          <div class="memory-copy">
+            <span class="kicker" data-fr="PETIT MODÈLE QUALITATIF" data-en="A QUALITATIVE MODEL">PETIT MODÈLE QUALITATIF</span>
+            <h3 data-fr="Une connexion, plusieurs expériences" data-en="One connection, repeated experience">Une connexion, plusieurs expériences</h3>
+            <p data-fr="Dans certaines conditions, l’activité coordonnée et répétée peut modifier durablement l’efficacité d’une synapse. Essaie l’analogie ci-contre." data-en="Under some conditions, coordinated, repeated activity can produce lasting changes in synaptic effectiveness. Try the analogy here.">Dans certaines conditions, l’activité coordonnée et répétée peut modifier durablement l’efficacité d’une synapse. Essaie l’analogie ci-contre.</p>
+            <p class="small-note" data-fr="Ce modèle illustre une idée, pas la mesure réelle d’une synapse ni la formation complète d’un souvenir." data-en="This model illustrates an idea; it does not measure a real synapse or represent how a whole memory forms.">Ce modèle illustre une idée, pas la mesure réelle d’une synapse ni la formation complète d’un souvenir.</p>
+          </div>
+          <div class="memory-demo">
+            <div class="connection" id="connection" data-level="0" aria-label="Connexion initiale" data-fr-aria-label="Connexion initiale" data-en-aria-label="Initial connection">
+              <span class="connection-node"></span><span class="connection-line"></span><span class="connection-node"></span>
+            </div>
+            <p class="connection-label" id="connection-label" aria-live="polite" data-fr="Connexion à explorer" data-en="Connection to explore">Connexion à explorer</p>
+            <button class="action-button" id="repeat-stimulation" type="button" data-fr="Associer une expérience" data-en="Pair an experience">Associer une expérience</button>
+            <button class="text-button" id="reset-stimulation" type="button" data-fr="Recommencer" data-en="Start over" disabled>Recommencer</button>
+            <p class="count-label"><span data-fr="Expériences associées :" data-en="Paired experiences:">Expériences associées :</span> <strong id="experience-count">0</strong></p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section sources-section" id="sources" aria-labelledby="sources-title">
+      <div class="section-heading">
+        <div>
+          <p class="kicker" data-fr="POUR ALLER PLUS LOIN" data-en="FURTHER READING">POUR ALLER PLUS LOIN</p>
+          <h2 id="sources-title" data-fr="Sources et repères" data-en="Sources and further reading">Sources et repères</h2>
+        </div>
+      </div>
+      <ul class="source-list">
+        <li><a href="https://openstax.org/books/anatomy-and-physiology-2e/pages/12-4-the-action-potential" target="_blank" rel="noopener noreferrer">OpenStax — <span data-fr="Le potentiel d’action" data-en="The Action Potential">Le potentiel d’action</span></a></li>
+        <li><a href="https://openstax.org/books/anatomy-and-physiology-2e/pages/12-5-communication-between-neurons" target="_blank" rel="noopener noreferrer">OpenStax — <span data-fr="La communication entre neurones" data-en="Communication Between Neurons">La communication entre neurones</span></a></li>
+        <li><a href="https://openstax.org/books/psychology-2e/pages/8-1-how-memory-functions" target="_blank" rel="noopener noreferrer">OpenStax — <span data-fr="Comment fonctionne la mémoire" data-en="How Memory Functions">Comment fonctionne la mémoire</span></a></li>
+      </ul>
+    </section>
+  </main>
+  <footer class="wrap footer">
+    <span>Neuro Map · Human Body</span>
+    <span data-fr="Un modèle pédagogique, pas un outil de diagnostic médical." data-en="An educational model, not a medical diagnostic tool.">Un modèle pédagogique, pas un outil de diagnostic médical.</span>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "name": "neuro-map",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node model.test.mjs"
+  }
+}

@@ -1,6 +1,6 @@
 # Human Body
 
-Human Body is the public monorepo and gateway for a collection of independent, educational science modules about the human body. Each module keeps its own experience and Cloudflare Pages deployment, while its source code and documentation live together in this repository.
+Human Body is the public monorepo and gateway for a collection of independent, educational science modules about the human body. Each module keeps its own experience, while its source code and documentation live together in this repository. Modules can be served by the collection site or deployed independently.
 
 ## Modules
 
@@ -8,10 +8,10 @@ Human Body is the public monorepo and gateway for a collection of independent, e
 | --- | --- | --- |
 | [TelomereClock](https://telomereclock.pages.dev/) | Telomeres, cell division, and ageing | Available |
 | [Heartbeat Lab](https://heartbeat-lab.pages.dev/) | Heart, circulation, and blood pressure | Available |
-| Neuro Map | Neurons, synapses, and memory | Coming soon |
+| Neuro Map | Neurons, synapses, and memory | Available |
 | Immune Arena | Innate defences, antibodies, and vaccines | Coming soon |
 
-The collection portal links to the independently deployable modules. Keeping the source in one repository does not combine their code or simulations.
+The collection portal links to the modules. Keeping the source in one repository does not combine their code or simulations. Neuro Map is available from the collection portal at `/modules/neuro-map/`.
 
 ## Project structure
 
@@ -20,6 +20,7 @@ index.html                      Human Body collection portal
 modules/
   telomereclock/                React/Vite educational application
   heartbeat-lab/                Dependency-free cardiac-cycle module
+  neuro-map/                    Dependency-free neuron and synapse module
 README.md
 ```
 
@@ -46,6 +47,15 @@ npm test
 
 Heartbeat Lab is static HTML/CSS/JavaScript; serve its directory with any local static HTTP server to preview it.
 
+Neuro Map:
+
+```bash
+cd modules/neuro-map
+npm test
+```
+
+Neuro Map is static HTML/CSS/JavaScript; serve its directory with any local static HTTP server to preview it.
+
 ## Deploy
 
 The portal, TelomereClock, and Heartbeat Lab use separate Cloudflare Pages projects connected to this repository. Each Pages project uses its own root directory and build settings:
@@ -57,5 +67,6 @@ The portal, TelomereClock, and Heartbeat Lab use separate Cloudflare Pages proje
 | `heartbeat-lab` | `modules/heartbeat-lab` | *(none)* | `/` |
 
 Pushes to `main` can trigger builds for all connected projects. Cloudflare Pages supports this monorepo setup; configure build watch paths later if avoiding unrelated builds becomes useful.
+Neuro Map is currently served from the collection site's `/modules/neuro-map/` path. To deploy it as a separate Pages project, use `modules/neuro-map` as the root directory, no build command, and `/` as the output directory.
 
 All modules are educational models, not medical diagnostic tools or personal health advice.
