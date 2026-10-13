@@ -208,8 +208,6 @@ input[type=range]::-moz-range-thumb { width: 20px; height: 20px; border-radius: 
 .badge.r { color: var(--red); border: 1px solid var(--red); }
 .badge.g { color: var(--glow); border: 1px solid var(--glow); }
 .badge.p { color: #b3a9ff; border: 1px solid #6c5fdc; }
-.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); gap: 1rem; }
-.card-grid article { background: var(--deck-2); border: 1px solid var(--line); border-radius: 12px; padding: 1rem; display: flex; flex-direction: column; gap: .5rem; min-width: 0; }
 .stage { font-size: .78rem; color: var(--mute); }
 
 /* ---------- Fenêtre ---------- */
@@ -287,8 +285,6 @@ dialog::backdrop { background: rgba(3,6,14,.8); backdrop-filter: blur(3px); }
 .quiz-ok b { color: var(--glow); } .quiz-ko b { color: var(--red); }
 .refs { list-style: none; margin: 0; padding: 0; display: grid; gap: .55rem; font-size: .84rem; color: var(--mute); }
 .refs a { color: var(--glow); text-decoration-color: color-mix(in srgb, var(--glow) 40%, transparent); }
-.hub-on { border-color: var(--glow) !important; }
-.hub-off { opacity: .75; }
 .badge-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; }
 .badge-list li { display: grid; grid-template-columns: 2rem 1fr; gap: .7rem; align-items: center; padding: .55rem .7rem; border: 1px solid var(--line); border-radius: 10px; opacity: .65; }
 .badge-list li.on { opacity: 1; border-color: var(--glow); background: color-mix(in srgb, var(--glow) 8%, var(--deck)); }

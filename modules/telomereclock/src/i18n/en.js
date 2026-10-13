@@ -207,18 +207,6 @@ export default {
     title: "Bibliography", lede: "References used in the app. The model’s values remain teaching-scale orders of magnitude.",
     g: { core: "Telomeres, Hayflick, telomerase", life: "Lifestyle", aging: "Senescence and inflammation", hist: "Historical demography", research: "Clinical research" }
   },
-  hub: {
-    title: "Human Body: upcoming modules", lede: "TelomereClock is the first module of a collection of fun science apps about the human body.",
-    portal: "Explore the whole collection",
-    active: "Available", soon: "Coming soon",
-    items: [
-      { n: "TelomereClock", d: "Telomeres, ageing and cancer.", s: "active" },
-      { n: "Heartbeat Lab", d: "The heart, circulation and blood pressure.", s: "soon" },
-      { n: "Neuro Map", d: "Neurons, synapses and memory.", s: "soon" },
-      { n: "Immune Arena", d: "Innate defences, antibodies and vaccines.", s: "soon" }
-    ]
-  },
-
   dlg: {
     status: "Senescent (aged)", title: "Hayflick limit reached",
     intro: "Telomeres have dropped below 4,000 bp. The cap protein complex (shelterin) can no longer hold and the chromosome end looks like a DNA break.",

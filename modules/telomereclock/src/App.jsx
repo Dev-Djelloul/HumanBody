@@ -15,7 +15,7 @@ import LifestyleSection from './components/LifestyleSection.jsx';
 import HistorySection from './components/HistorySection.jsx';
 import KnowledgeSection from './components/KnowledgeSection.jsx';
 import Quiz from './components/Quiz.jsx';
-import { Bibliography, Hub } from './components/Extras.jsx';
+import { Bibliography } from './components/Extras.jsx';
 
 export default function App() {
   const { t } = useI18n();
@@ -154,7 +154,6 @@ export default function App() {
         <KnowledgeSection />
         <Quiz onDone={score => { if (score >= 5) progress.unlock('quiz'); }} />
         <Bibliography />
-        <Hub />
         <footer className="note" style={{ paddingTop: '1rem', borderTop: '1px solid var(--line)' }}>{t('footer.text')}</footer>
       </main>
 

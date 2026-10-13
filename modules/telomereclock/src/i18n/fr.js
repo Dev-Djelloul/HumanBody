@@ -207,18 +207,6 @@ export default {
     title: "Bibliographie", lede: "Références utilisées dans l’application. Les valeurs du modèle restent des ordres de grandeur pédagogiques.",
     g: { core: "Télomères, Hayflick, télomérase", life: "Mode de vie", aging: "Sénescence et inflammation", hist: "Démographie historique", research: "Recherche clinique" }
   },
-  hub: {
-    title: "Human Body : les prochains modules", lede: "TelomereClock est le premier module d’une collection d’applications scientifiques et ludiques sur le corps humain.",
-    portal: "Découvrir toute la collection",
-    active: "Disponible", soon: "Bientôt",
-    items: [
-      { n: "TelomereClock", d: "Télomères, vieillissement et cancer.", s: "active" },
-      { n: "Heartbeat Lab", d: "Le cœur, la circulation et la pression artérielle.", s: "soon" },
-      { n: "Neuro Map", d: "Neurones, synapses et mémoire.", s: "soon" },
-      { n: "Immune Arena", d: "Défenses innées, anticorps et vaccins.", s: "soon" }
-    ]
-  },
-
   dlg: {
     status: "Sénescent (vieilli)", title: "Limite de Hayflick atteinte",
     intro: "Les télomères sont tombés sous 4 000 pb. La protéine-capuchon (complexe shelterin) ne tient plus et l’extrémité du chromosome ressemble à une cassure de l’ADN.",

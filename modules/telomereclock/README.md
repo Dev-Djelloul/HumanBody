@@ -14,10 +14,6 @@
 - Parcourir des contenus d'histoire et de biologie, répondre à un quiz et consulter une bibliographie.
 - Utiliser l'interface en français ou en anglais.
 
-## Collection Human Body
-
-TelomereClock est un module de la collection d'applications scientifiques Human Body. Son portail présente [Heartbeat Lab](https://heartbeat-lab.pages.dev/), ainsi que les prochains modules Neuro Map et Immune Arena.
-
 ## Modèle et limites
 
 Les simulations sont des **illustrations pédagogiques**, pas des prédictions individuelles. Le modèle simplifie des mécanismes biologiques complexes et utilise des valeurs indicatives, par exemple une perte de référence de 100 paires de bases par division, une longueur initiale de 10 000 pb et un seuil critique de 4 000 pb. Les résultats affichés ne constituent ni un diagnostic ni un conseil médical.

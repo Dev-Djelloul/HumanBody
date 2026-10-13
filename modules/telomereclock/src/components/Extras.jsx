@@ -26,28 +26,3 @@ export function Bibliography() {
     </section>
   );
 }
-
-export function Hub() {
-  const { t } = useI18n();
-  const items = t('hub.items');
-  return (
-    <section id="hub" aria-labelledby="t-hub" style={{ display: 'grid', gap: '1.2rem' }}>
-      <div style={{ display: 'grid', gap: '.7rem' }}>
-        <h2 id="t-hub">{t('hub.title')}</h2>
-        <p className="lede">{t('hub.lede')}</p>
-        <a className="btn btn-ghost" href="https://human-body-hub.pages.dev/" style={{ justifySelf: 'start', textDecoration: 'none' }}>
-          {t('hub.portal')}
-        </a>
-      </div>
-      <div className="card-grid">
-        {items.map(m => (
-          <article key={m.n} className={m.s === 'active' ? 'hub-on' : 'hub-off'}>
-            <h3>{m.n}</h3>
-            <p className="mute" style={{ fontSize: '.9rem' }}>{m.d}</p>
-            <span className={`badge ${m.s === 'active' ? 'g' : 'p'}`} style={{ alignSelf: 'start' }}>{t(`hub.${m.s}`)}</span>
-          </article>
-        ))}
-      </div>
-    </section>
-  );
-}
