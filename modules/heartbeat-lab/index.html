@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="Heartbeat Lab : explore le cycle cardiaque, le débit et la pression artérielle grâce à des modèles interactifs.">
+  <title>Heartbeat Lab — Human Body</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="https://human-body-hub.pages.dev/" aria-label="Human Body, retour à la collection">
+        <span class="brand-mark" aria-hidden="true">HB</span>
+        <span>Human Body <span class="brand-divider">/</span> <span class="brand-module">Heartbeat Lab</span></span>
+      </a>
+      <div class="header-actions">
+        <a class="collection-link" href="https://human-body-hub.pages.dev/" data-i18n="backToCollection">← Collection</a>
+        <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch to English">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow"><span class="pulse" aria-hidden="true"></span><span data-i18n="eyebrow">LABORATOIRE CARDIAQUE · MODULE 02</span></p>
+      <h1 id="page-title"><span data-i18n="titleLine1">Chaque battement</span><br><span class="title-accent" data-i18n="titleLine2">propulse la vie.</span></h1>
+      <p class="hero-copy" data-i18n="intro">Explore le cycle cardiaque, puis ajuste le rythme et la résistance des vaisseaux pour comprendre comment le cœur met le sang en mouvement.</p>
+    </section>
+
+    <section class="cycle-section" aria-labelledby="cycle-title">
+      <div class="section-heading">
+        <div>
+          <p class="kicker" data-i18n="chapter1">01 / LE CYCLE CARDIAQUE</p>
+          <h2 id="cycle-title" data-i18n="cycleTitle">Un cœur, quatre temps</h2>
+        </div>
+        <span class="phase-counter" id="phase-counter">01 / 04</span>
+      </div>
+
+      <div class="cycle-layout">
+        <article class="panel heart-panel" id="heart-panel" data-phase="fill" data-playing="false">
+          <div class="heart-toolbar">
+            <span class="live-label"><span class="live-dot" id="heartbeat-pulse" aria-hidden="true"></span><span data-i18n="liveCycle">CYCLE PÉDAGOGIQUE</span></span>
+              <button id="play-cycle" class="icon-button" type="button" aria-label="Lancer l'animation du cycle" aria-pressed="false" data-i18n-aria-label="playAria">
+              <span id="play-icon" aria-hidden="true">▶</span><span id="play-label" data-i18n="play">Animer</span>
+            </button>
+          </div>
+          <div class="heart-visual">
+            <svg id="heart-svg" viewBox="0 0 560 340" role="img" aria-labelledby="heart-svg-title heart-svg-desc">
+              <title id="heart-svg-title">Schéma simplifié de la circulation à travers le cœur</title>
+              <desc id="heart-svg-desc">Le sang pauvre en oxygène passe du corps par l'oreillette droite (OD) et le ventricule droit (VD) vers les poumons. Le sang oxygéné revient par l'oreillette gauche (OG) et le ventricule gauche (VG), qui le propulse dans l'aorte vers le corps.</desc>
+              <defs>
+                <linearGradient id="venous" x1="0" x2="1"><stop stop-color="#36c7ff"/><stop offset="1" stop-color="#6486ff"/></linearGradient>
+                <linearGradient id="arterial" x1="0" x2="1"><stop stop-color="#ff668b"/><stop offset="1" stop-color="#ffad7d"/></linearGradient>
+                <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#51caff"/></marker>
+                <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#ff7894"/></marker>
+              </defs>
+              <g class="circulation">
+                <path class="vessel blue-path path-body-in" d="M24 109H112" marker-end="url(#arrow-blue)"/>
+                <path class="vessel blue-path path-ra-rv" d="M168 132V191" marker-end="url(#arrow-blue)"/>
+                <path class="vessel blue-path path-lung-out" d="M112 235H78V287H40" marker-end="url(#arrow-blue)"/>
+                <path class="vessel red-path path-lung-in" d="M40 305H78V92H383" marker-end="url(#arrow-red)"/>
+                <path class="vessel red-path path-la-lv" d="M411 132V191" marker-end="url(#arrow-red)"/>
+                <path class="vessel red-path path-body-out" d="M467 235H506V116H536" marker-end="url(#arrow-red)"/>
+              </g>
+              <g class="lungs" aria-hidden="true">
+                <path d="M24 276c-15-13-16-39-5-48 13-10 28 2 29 16v43H24zm56 0c15-13 16-39 5-48-13-10-28 2-29 16v43h24z" fill="#172541" stroke="#5b86ad" stroke-width="2"/>
+                <text x="52" y="330" class="organ-label" text-anchor="middle" data-i18n="lungs">POUMONS</text>
+              </g>
+              <g class="body-icon" aria-hidden="true">
+                <circle cx="536" cy="86" r="12" fill="#172541" stroke="#ce9a71" stroke-width="2"/>
+                <path d="M536 101v35m-18-20 18 8 18-8m-18 0-13 28m13-28 13 28m-13-28v28" fill="none" stroke="#ce9a71" stroke-width="3" stroke-linecap="round"/>
+                <text x="536" y="164" class="organ-label" text-anchor="middle" data-i18n="body">CORPS</text>
+              </g>
+              <g class="chamber chamber-ra">
+                <rect x="112" y="76" width="112" height="56" rx="19"/>
+                <text x="168" y="101" class="chamber-short">OD</text><text x="168" y="117" class="chamber-name" data-i18n="ra">OREILLETTE D.</text>
+              </g>
+              <g class="chamber chamber-rv">
+                <rect x="112" y="191" width="112" height="56" rx="19"/>
+                <text x="168" y="216" class="chamber-short">VD</text><text x="168" y="232" class="chamber-name" data-i18n="rv">VENTRICULE D.</text>
+              </g>
+              <g class="chamber chamber-la">
+                <rect x="355" y="76" width="112" height="56" rx="19"/>
+                <text x="411" y="101" class="chamber-short">OG</text><text x="411" y="117" class="chamber-name" data-i18n="la">OREILLETTE G.</text>
+              </g>
+              <g class="chamber chamber-lv">
+                <rect x="355" y="191" width="112" height="56" rx="19"/>
+                <text x="411" y="216" class="chamber-short">VG</text><text x="411" y="232" class="chamber-name" data-i18n="lv">VENTRICULE G.</text>
+              </g>
+              <text x="28" y="91" class="small-label" data-i18n="fromBody">du corps</text>
+              <text x="440" y="78" class="small-label" data-i18n="toBody">vers le corps</text>
+              <text x="279" y="280" class="center-note" text-anchor="middle" data-i18n="rightToLungs">CŒUR DROIT → POUMONS → CŒUR GAUCHE</text>
+              <text x="279" y="301" class="flow-legend" text-anchor="middle"><tspan fill="#51caff" data-i18n="lowOxygen">● pauvre en O₂</tspan><tspan dx="18" fill="#ff7894" data-i18n="highOxygen">● riche en O₂</tspan></text>
+            </svg>
+          </div>
+          <div class="flow-key" aria-label="Légende des flux sanguins" data-i18n-aria-label="flowLegend">
+            <span><i class="key-dot venous-dot"></i><span data-i18n="venousBlood">Sang pauvre en O₂</span></span>
+            <span><i class="key-dot arterial-dot"></i><span data-i18n="arterialBlood">Sang riche en O₂</span></span>
+          </div>
+        </article>
+
+        <article class="panel phase-panel" aria-live="polite">
+          <p class="kicker" data-i18n="currentPhase">PHASE EN COURS</p>
+          <span class="phase-number" id="phase-number">01</span>
+          <h3 id="phase-title" data-i18n="phaseFillTitle">Remplissage</h3>
+          <p class="phase-description" id="phase-description" data-i18n="phaseFillBody">Les ventricules se relâchent. Le sang passe des oreillettes vers les ventricules à travers les valves auriculo-ventriculaires ouvertes.</p>
+          <div class="valve-state"><span class="valve-label" data-i18n="valves">ÉTAT DES VALVES</span><span id="valve-text" data-i18n="valveFill">Valves AV ouvertes · valves de sortie fermées</span></div>
+          <nav class="phase-tabs" aria-label="Phases du cycle cardiaque" data-i18n-aria-label="phaseNav">
+            <button class="phase-tab active" type="button" data-phase-index="0" aria-current="step"><span>01</span><span data-i18n="phaseTabFill">Remplissage</span></button>
+            <button class="phase-tab" type="button" data-phase-index="1"><span>02</span><span data-i18n="phaseTabAtrial">Systole auriculaire</span></button>
+            <button class="phase-tab" type="button" data-phase-index="2"><span>03</span><span data-i18n="phaseTabVentricular">Systole ventriculaire</span></button>
+            <button class="phase-tab" type="button" data-phase-index="3"><span>04</span><span data-i18n="phaseTabRelax">Relaxation</span></button>
+          </nav>
+          <p class="animation-note" data-i18n="animationNote">Animation schématique : les durées ne sont pas à l'échelle.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="lab-section" aria-labelledby="lab-title">
+      <div class="section-heading">
+        <div>
+          <p class="kicker" data-i18n="chapter2">02 / LE LABORATOIRE</p>
+          <h2 id="lab-title" data-i18n="labTitle">Ajuste le modèle</h2>
+        </div>
+        <button class="reset-button" id="reset-model" type="button" data-i18n="reset">Réinitialiser</button>
+      </div>
+      <p class="section-intro" data-i18n="labIntro">Modifie un paramètre à la fois et observe les conséquences dans ce modèle simplifié.</p>
+
+      <div class="lab-layout">
+        <article class="panel controls-panel">
+          <div class="control-block">
+            <div class="control-heading"><label for="rate-slider" data-i18n="heartRate">Fréquence cardiaque</label><span class="control-reading"><output id="rate-value" for="rate-slider">75</output><small data-i18n="bpm">battements/min</small></span></div>
+            <input id="rate-slider" type="range" min="40" max="140" step="1" value="75">
+            <div class="range-ends"><span>40</span><span>140 <span data-i18n="bpmShort">bpm</span></span></div>
+            <p class="control-hint" data-i18n="rateHint">Une hausse du rythme augmente le nombre de battements par minute.</p>
+          </div>
+          <div class="control-block">
+            <div class="control-heading"><label for="resistance-slider" data-i18n="vascularResistance">Résistance des vaisseaux</label><span class="control-reading"><output id="resistance-value" for="resistance-slider">18</output><small data-i18n="resistanceUnit">mmHg·min/L</small></span></div>
+            <input id="resistance-slider" type="range" min="14" max="22" step="0.5" value="18">
+            <div class="range-ends"><span>14</span><span>22 <span data-i18n="resistanceShort">unités</span></span></div>
+            <p class="control-hint" data-i18n="resistanceHint">Dans cette approximation, une résistance plus élevée augmente la pression moyenne calculée.</p>
+          </div>
+          <div class="presets">
+            <span class="preset-label" data-i18n="tryPreset">ESSAYER UN RÉGLAGE</span>
+            <div class="preset-buttons">
+              <button class="preset-button active" type="button" data-preset="rest" data-i18n="presetRest">Repos illustratif</button>
+              <button class="preset-button" type="button" data-preset="active" data-i18n="presetActive">Rythme plus élevé</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel results-panel" aria-live="polite" aria-labelledby="results-title">
+          <p class="kicker" id="results-title" data-i18n="modelOutputs">SORTIES DU MODÈLE</p>
+          <div class="result-grid">
+            <div class="result-card">
+              <span class="result-label" data-i18n="strokeVolume">Volume d'éjection</span>
+              <strong><span id="stroke-volume">70</span><small>mL</small></strong>
+              <span class="result-caption" data-i18n="fixedIllustration">valeur illustrative fixe</span>
+            </div>
+            <div class="result-card accent-blue">
+              <span class="result-label" data-i18n="cardiacOutput">Débit cardiaque</span>
+              <strong><span id="cardiac-output">5,3</span><small>L/min</small></strong>
+              <span class="result-caption">FC × VES</span>
+            </div>
+            <div class="result-card accent-pink">
+              <span class="result-label" data-i18n="meanPressure">Pression artérielle moyenne</span>
+              <strong><span id="mean-pressure">95</span><small>mmHg</small></strong>
+              <span class="result-caption" data-i18n="approximate">approximation du modèle</span>
+            </div>
+          </div>
+          <div class="equation-box">
+            <span class="equation-label" data-i18n="modelEquations">RELATIONS ILLUSTRÉES</span>
+            <div><code>DC = FC × VES</code><span data-i18n="equationCO">débit cardiaque</span></div>
+            <div><code>PAM ≈ DC × R</code><span data-i18n="equationMAP">résistance périphérique simplifiée</span></div>
+          </div>
+          <p class="interpretation" id="interpretation">À 75 battements/min, le débit calculé est de 5,3 L/min.</p>
+        </article>
+      </div>
+      <aside class="model-caveat">
+        <span class="caveat-icon" aria-hidden="true">i</span>
+        <p><strong data-i18n="modelLimitTitle">Un modèle pour apprendre, pas pour prédire.</strong> <span data-i18n="modelLimitBody">Le volume d'éjection est fixé à 70 mL pour isoler l'effet de la fréquence dans l'équation. La résistance choisie est une variable pédagogique, pas une mesure clinique. Le modèle ne représente pas les adaptations physiologiques et ses résultats ne décrivent pas la santé d'une personne.</span></p>
+      </aside>
+    </section>
+
+    <section class="learn-section" aria-labelledby="learn-title">
+      <div class="section-heading">
+        <div>
+          <p class="kicker" data-i18n="chapter3">03 / LES REPÈRES</p>
+          <h2 id="learn-title" data-i18n="learnTitle">Trois idées à retenir</h2>
+        </div>
+      </div>
+      <div class="learn-grid">
+        <article class="learn-card"><span class="learn-index">A</span><h3 data-i18n="learn1Title">Deux pompes en série</h3><p data-i18n="learn1Body">Le côté droit envoie le sang vers les poumons. Le côté gauche propulse le sang oxygéné vers le reste du corps.</p></article>
+        <article class="learn-card"><span class="learn-index">B</span><h3 data-i18n="learn2Title">Le cycle alterne</h3><p data-i18n="learn2Body">En diastole, les cavités se remplissent. En systole, elles se contractent : les oreillettes puis les ventricules.</p></article>
+        <article class="learn-card"><span class="learn-index">C</span><h3 data-i18n="learn3Title">Débit et pression, pas synonymes</h3><p data-i18n="learn3Body">Le débit décrit un volume éjecté par minute. La pression dépend aussi de la résistance rencontrée par le flux.</p></article>
+      </div>
+    </section>
+
+    <section class="sources-section" aria-labelledby="sources-title">
+      <details class="sources-panel">
+        <summary id="sources-title" data-i18n="sourcesTitle">Sources et transparence scientifique</summary>
+        <div class="sources-content">
+          <p data-i18n="sourcesIntro">Les explications s'appuient sur des ressources ouvertes d'anatomie et de physiologie. Les commandes et valeurs interactives constituent un modèle didactique simplifié, pas une simulation clinique.</p>
+          <ul>
+            <li><a href="https://openstax.org/books/anatomy-and-physiology-2e/pages/19-3-cardiac-cycle" target="_blank" rel="noopener noreferrer">OpenStax, Anatomy and Physiology 2e — The Cardiac Cycle</a></li>
+            <li><a href="https://openstax.org/books/anatomy-and-physiology-2e/pages/19-4-cardiac-physiology" target="_blank" rel="noopener noreferrer">OpenStax, Anatomy and Physiology 2e — Cardiac Physiology</a></li>
+          </ul>
+        </div>
+      </details>
+    </section>
+
+    <footer class="footer">
+      <a href="https://human-body-hub.pages.dev/" data-i18n="footerCollection">← Retour à Human Body</a>
+      <span data-i18n="footerDisclaimer">Expérience éducative — ne remplace pas un avis médical.</span>
+    </footer>
+  </main>
+</body>
+</html>

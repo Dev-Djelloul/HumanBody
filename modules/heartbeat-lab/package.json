@@ -1,0 +1,8 @@
+{
+  "name": "heartbeat-lab-model",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node model.test.mjs"
+  }
+}
