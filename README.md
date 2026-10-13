@@ -57,7 +57,7 @@ Chaque module est autonome. Les modules statiques utilisent HTML, CSS et les mod
 
 Le portail utilise des illustrations vectorielles SVG, nettes à toutes les tailles d’écran :
 
-- `assets/brand/human-body-logo.svg` : logo horizontal Human Body et wordmark.
+- `assets/brand/human-body-logo.svg` : logo horizontal Human Body et wordmark, également utilisé dans les en-têtes des modules.
 - `assets/brand/human-body-mark.svg` : symbole carré utilisé comme favicon.
 - `assets/illustrations/human-body-exploration.svg` : illustration scientifique de la page d’accueil, près du titre principal.
 

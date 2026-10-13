@@ -10,8 +10,9 @@ export default function Header({ sim, rate, progress, onJournal }) {
     <header className="top">
       <div className="wrap top-in">
         <a className="brand" href="https://human-body-hub.pages.dev/" aria-label={t('brand.homeAria')}>
-          <span className="brand-mark" aria-hidden="true">HB</span>
-          <span>Human Body <span className="brand-divider">/</span> <span className="brand-module">TelomereClock</span></span>
+          <img className="brand-logo" src="https://human-body-hub.pages.dev/assets/brand/human-body-logo.svg" alt="" aria-hidden="true" />
+          <span className="brand-divider" aria-hidden="true">/</span>
+          <span className="brand-module">TelomereClock</span>
         </a>
         <a className="collection-link" href="https://human-body-hub.pages.dev/">{t('brand.collection')}</a>
         <div className="hud mono" aria-hidden="true">
