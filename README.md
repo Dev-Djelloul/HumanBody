@@ -7,7 +7,7 @@ Human Body is the gateway to a collection of independent, educational science mo
 | Module | Subject | Status |
 | --- | --- | --- |
 | [TelomereClock](https://telomereclock.pages.dev/) | Telomeres, cell division, and ageing | Available |
-| Heartbeat Lab | Heart, circulation, and blood pressure | Coming soon |
+| [Heartbeat Lab](https://heartbeat-lab.pages.dev/) | Heart, circulation, and blood pressure | Available |
 | Neuro Map | Neurons, synapses, and memory | Coming soon |
 | Immune Arena | Innate defences, antibodies, and vaccines | Coming soon |
 
