@@ -3,6 +3,11 @@ import { calculateOutputs, DEFAULTS } from './model.js';
 const translations = {
   fr: {
     backToCollection: '← Collection',
+    moduleNav: 'Navigation du module',
+    navCycle: 'Cycle',
+    navLab: 'Laboratoire',
+    navLearn: 'Repères',
+    navSources: 'Sources',
     eyebrow: 'LABORATOIRE CARDIAQUE · MODULE 02',
     titleLine1: 'Chaque battement',
     titleLine2: 'propulse la vie.',
@@ -92,6 +97,11 @@ const translations = {
   },
   en: {
     backToCollection: '← Collection',
+    moduleNav: 'Module navigation',
+    navCycle: 'Cycle',
+    navLab: 'Lab',
+    navLearn: 'Key ideas',
+    navSources: 'Sources',
     eyebrow: 'CARDIAC LAB · MODULE 02',
     titleLine1: 'Every heartbeat',
     titleLine2: 'moves life forward.',

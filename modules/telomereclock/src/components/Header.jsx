@@ -13,24 +13,28 @@ export default function Header({ sim, rate, progress, onJournal }) {
           <span className="brand-mark" aria-hidden="true">HB</span>
           <span>Human Body <span className="brand-divider">/</span> <span className="brand-module">TelomereClock</span></span>
         </a>
+        <a className="collection-link" href="https://human-body-hub.pages.dev/">{t('brand.collection')}</a>
         <div className="hud mono" aria-hidden="true">
           <span>{t('hud.length')} <b>{fmt(len)}</b> {t('unit.bp')}</span>
           <span>{t('hud.div')} <b>{sim.n}</b></span>
           <span>{t('hud.loss')} <b>{fmt(rate)}</b> {t('unit.bp')}/div</span>
         </div>
         <span className="alert-badge" role="status">{t('alertBadge')}</span>
-        <nav className="nav" aria-label={t('nav.aria')}>
-          {links.map(([id, k]) => <a key={id} href={`#${id}`}>{t(`nav.${k}`)}</a>)}
-        </nav>
-        <div className="top-tools">
-          <a className="collection-link" href="https://human-body-hub.pages.dev/">{t('brand.collection')}</a>
-          <button type="button" className="chip" onClick={onJournal} aria-label={t('journal.title')}>
-            <span aria-hidden="true">★</span> {t('nav.journal')} <b className="mono">{progress.count}/{progress.total}</b>
-          </button>
-          <div className="lang" role="group" aria-label="Langue / Language">
-            {['fr', 'en'].map(l => (
-              <button key={l} type="button" aria-pressed={lang === l} onClick={() => setLang(l)}>{l.toUpperCase()}</button>
-            ))}
+      </div>
+      <div className="subnav">
+        <div className="wrap subnav-in">
+          <nav className="nav" aria-label={t('nav.aria')}>
+            {links.map(([id, k]) => <a key={id} href={`#${id}`}>{t(`nav.${k}`)}</a>)}
+          </nav>
+          <div className="top-tools">
+            <button type="button" className="chip" onClick={onJournal} aria-label={t('journal.title')}>
+              <span aria-hidden="true">★</span> {t('nav.journal')} <b className="mono">{progress.count}/{progress.total}</b>
+            </button>
+            <div className="lang" role="group" aria-label="Langue / Language">
+              {['fr', 'en'].map(l => (
+                <button key={l} type="button" aria-pressed={lang === l} onClick={() => setLang(l)}>{l.toUpperCase()}</button>
+              ))}
+            </div>
           </div>
         </div>
       </div>

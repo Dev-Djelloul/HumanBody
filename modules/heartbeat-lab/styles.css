@@ -16,14 +16,14 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 136px; }
 body { margin: 0; min-width: 320px; }
 button, input { font: inherit; }
 button { color: inherit; }
 a { color: inherit; }
 .wrap { width: min(1160px, calc(100% - 40px)); margin-inline: auto; }
 
-.topbar { border-bottom: 1px solid var(--line); }
+.topbar { position: sticky; top: 0; z-index: 30; border-bottom: 1px solid var(--line); background: rgb(11 16 32 / 92%); backdrop-filter: blur(12px); }
 .topbar-inner { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
 .brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; font-weight: 700; letter-spacing: -.03em; }
 .brand-mark { width: 34px; aspect-ratio: 1; display: grid; place-items: center; border: 1px solid #35f0d277; border-radius: 11px; color: var(--mint); font: 600 11px "JetBrains Mono", monospace; box-shadow: inset 0 0 18px #35f0d21c; }
@@ -35,6 +35,12 @@ a { color: inherit; }
 .lang-toggle, .icon-button, .reset-button, .preset-button, .phase-tab { border: 1px solid var(--line); background: transparent; cursor: pointer; }
 .lang-toggle { border-radius: 999px; padding: 8px 12px; color: var(--muted); font: 600 11px "JetBrains Mono", monospace; }
 .lang-toggle:hover, .lang-toggle:focus-visible { border-color: var(--mint); color: var(--mint); }
+.subnav { border-top: 1px solid rgb(41 49 75 / 65%); }
+.subnav-inner { min-height: 48px; display: flex; align-items: center; gap: 16px; }
+.module-nav { display: flex; min-width: 0; align-items: center; gap: 4px; margin-right: auto; }
+.module-nav a { flex: 0 0 auto; border-radius: 999px; padding: 7px 11px; color: var(--muted); font-size: 13px; font-weight: 500; text-decoration: none; }
+.module-nav a:hover, .module-nav a:focus-visible { background: #35f0d20d; color: var(--mint); }
+.subnav .lang-toggle { flex: 0 0 auto; }
 
 .hero { padding-block: clamp(64px, 9vw, 112px) 44px; }
 .eyebrow, .kicker, .live-label, .preset-label, .equation-label, .valve-label { display: flex; align-items: center; gap: 9px; color: var(--mint); font: 600 10px "JetBrains Mono", monospace; letter-spacing: .12em; text-transform: uppercase; }
@@ -177,11 +183,16 @@ input[type="range"]:focus-visible { outline: 2px solid var(--mint); outline-offs
 }
 @media (max-width: 520px) {
   .wrap { width: min(100% - 28px, 1160px); }
+  html { scroll-padding-top: 144px; }
   .topbar-inner { min-height: 62px; }
   .brand { gap: 8px; font-size: 13px; }
   .brand-mark { width: 30px; }
   .header-actions { gap: 10px; }
   .collection-link { font-size: 11px; }
+  .subnav-inner { min-height: 0; flex-direction: column; align-items: stretch; gap: 5px; padding-block: 6px; }
+  .module-nav { width: 100%; overflow-x: auto; scrollbar-width: thin; }
+  .module-nav a { padding: 6px 10px; font-size: 12px; }
+  .subnav .lang-toggle { align-self: flex-end; padding: 6px 10px; }
   .hero { padding-top: 58px; }
   .section-heading { align-items: start; }
   .heart-panel { padding: 15px 10px 13px; }
