@@ -40,6 +40,9 @@ Une exploration bilingue et statique des barrières de défense et des réponses
 ```text
 .
 ├── index.html                    Portail de la collection Human Body
+├── assets/
+│   ├── brand/                    Logo, symbole et favicon Human Body (SVG)
+│   └── illustrations/             Illustration de la page d’accueil (SVG)
 ├── modules/
 │   ├── telomereclock/            Module React/Vite
 │   ├── heartbeat-lab/            Module statique sur le cycle cardiaque
@@ -49,6 +52,14 @@ Une exploration bilingue et statique des barrières de défense et des réponses
 ```
 
 Chaque module est autonome. Les modules statiques utilisent HTML, CSS et les modules JavaScript ES ; ils ne nécessitent ni installation de dépendances ni étape de compilation. TelomereClock utilise React et Vite.
+
+## Identité visuelle
+
+Le portail utilise des illustrations vectorielles SVG, nettes à toutes les tailles d’écran :
+
+- `assets/brand/human-body-logo.svg` : logo horizontal Human Body et wordmark.
+- `assets/brand/human-body-mark.svg` : symbole carré utilisé comme favicon.
+- `assets/illustrations/human-body-exploration.svg` : illustration scientifique de la page d’accueil, près du titre principal.
 
 ## Lancer les projets en local
 

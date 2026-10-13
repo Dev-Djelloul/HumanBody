@@ -6,6 +6,7 @@
   <meta name="theme-color" content="#0b1020">
   <meta name="description" content="Human Body : une collection d'expériences scientifiques et ludiques pour explorer le corps humain.">
   <title>Human Body — explorer le vivant</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/brand/human-body-mark.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
@@ -29,17 +30,19 @@
     .wrap { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
     header { border-bottom: 1px solid var(--line); }
     .topbar { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-    .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 700; letter-spacing: -.03em; }
-    .mark { width: 34px; aspect-ratio: 1; display: grid; place-items: center; border: 1px solid #35f0d277; border-radius: 11px; color: var(--mint); font: 600 12px "JetBrains Mono", monospace; box-shadow: inset 0 0 20px #35f0d21c; }
+    .brand { display: inline-flex; align-items: center; text-decoration: none; }
+    .brand-logo { display: block; width: 202px; height: auto; }
     .lang { border: 1px solid var(--line); background: transparent; color: var(--muted); border-radius: 999px; padding: 8px 13px; font: 600 12px "JetBrains Mono", monospace; cursor: pointer; }
     .lang:hover, .lang:focus-visible { border-color: var(--mint); color: var(--mint); }
     main { padding-block: clamp(64px, 10vw, 120px) 88px; }
     .eyebrow { display: flex; align-items: center; gap: 10px; color: var(--mint); font: 600 11px "JetBrains Mono", monospace; letter-spacing: .12em; text-transform: uppercase; }
     .pulse { width: 8px; aspect-ratio: 1; border-radius: 50%; background: var(--mint); box-shadow: 0 0 16px var(--mint); }
     h1, h2, h3, p { margin-top: 0; }
-    h1 { max-width: 840px; margin-bottom: 22px; font: 500 clamp(42px, 8vw, 82px)/1.07 Unbounded, sans-serif; letter-spacing: -.065em; }
+    .hero-layout { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr); align-items: center; gap: clamp(24px, 4vw, 48px); }
+    h1 { max-width: 800px; margin-bottom: 22px; font: 500 clamp(42px, 6.3vw, 72px)/1.1 Unbounded, sans-serif; letter-spacing: -.065em; }
     h1 span { color: var(--mint); }
     .intro { max-width: 650px; margin-bottom: 0; color: var(--muted); font-size: clamp(17px, 2vw, 20px); line-height: 1.7; }
+    .hero-art { display: block; width: 100%; max-width: 400px; justify-self: end; filter: drop-shadow(0 20px 52px #070b1680); }
     .section-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin: 76px 0 20px; }
     .section-head h2 { margin: 0; font: 500 clamp(21px, 3vw, 28px)/1.25 Unbounded, sans-serif; letter-spacing: -.04em; }
     .count { color: var(--muted); font: 12px "JetBrains Mono", monospace; white-space: nowrap; }
@@ -61,8 +64,16 @@
     .manifesto strong { color: #e4deff; }
     footer { padding: 22px 0 30px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
     footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 24px; }
+    @media (max-width: 860px) and (min-width: 681px) {
+      .hero-layout { grid-template-columns: minmax(0, 1fr) minmax(220px, .75fr); gap: 24px; }
+      h1 { font-size: clamp(42px, 6vw, 58px); }
+    }
     @media (max-width: 680px) {
       .wrap { width: min(100% - 28px, 1120px); }
+      .brand-logo { width: 174px; }
+      .hero-layout { grid-template-columns: 1fr; gap: 24px; }
+      .hero-art { width: min(100%, 390px); justify-self: center; }
+      h1 { font-size: clamp(40px, 11vw, 64px); }
       .grid { grid-template-columns: 1fr; }
       .card { min-height: 200px; }
       .section-head { margin-top: 58px; align-items: start; flex-direction: column; gap: 9px; }
@@ -73,15 +84,20 @@
 <body>
   <header>
     <div class="wrap topbar">
-      <a class="brand" href="/" aria-label="Human Body, accueil"><span class="mark" aria-hidden="true">HB</span><span>Human Body</span></a>
+      <a class="brand" href="/" aria-label="Human Body, accueil"><img class="brand-logo" src="./assets/brand/human-body-logo.svg" alt="Human Body"></a>
       <button class="lang" type="button" aria-label="Switch to English">EN</button>
     </div>
   </header>
   <main class="wrap">
     <section aria-labelledby="title">
-      <div class="eyebrow"><span class="pulse" aria-hidden="true"></span><span data-fr="Une collection pour explorer le vivant" data-en="A collection for curious minds">Une collection pour explorer le vivant</span></div>
-      <h1 id="title"><span data-fr="Le corps humain" data-en="The human body">Le corps humain</span><br><span data-fr="à explorer." data-en="to explore.">à explorer.</span></h1>
-      <p class="intro" data-fr="Des expériences scientifiques et ludiques pour comprendre les systèmes qui nous font vivre. Explore un module, manipule ses modèles et découvre la science derrière chaque phénomène." data-en="Playful, science-based experiences to understand the systems that keep us alive. Explore a module, interact with its models, and discover the science behind each phenomenon.">Des expériences scientifiques et ludiques pour comprendre les systèmes qui nous font vivre. Explore un module, manipule ses modèles et découvre la science derrière chaque phénomène.</p>
+      <div class="hero-layout">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="pulse" aria-hidden="true"></span><span data-fr="Une collection pour explorer le vivant" data-en="A collection for curious minds">Une collection pour explorer le vivant</span></div>
+          <h1 id="title"><span data-fr="Le corps humain" data-en="The human body">Le corps humain</span><br><span data-fr="à explorer." data-en="to explore.">à explorer.</span></h1>
+          <p class="intro" data-fr="Des expériences scientifiques et ludiques pour comprendre les systèmes qui nous font vivre. Explore un module, manipule ses modèles et découvre la science derrière chaque phénomène." data-en="Playful, science-based experiences to understand the systems that keep us alive. Explore a module, interact with its models, and discover the science behind each phenomenon.">Des expériences scientifiques et ludiques pour comprendre les systèmes qui nous font vivre. Explore un module, manipule ses modèles et découvre la science derrière chaque phénomène.</p>
+        </div>
+        <img class="hero-art" src="./assets/illustrations/human-body-exploration.svg" alt="" aria-hidden="true" fetchpriority="high">
+      </div>
     </section>
 
     <section aria-labelledby="modules-title">
