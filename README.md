@@ -1,83 +1,110 @@
 # Human Body
 
-Human Body is the public monorepo and gateway for a collection of independent, educational science modules about the human body. Each module keeps its own experience, while its source code and documentation live together in this repository. Modules can be served by the collection site or deployed independently.
+Human Body is a public monorepo and bilingual collection portal for independent, interactive science modules about the human body. Each module has its own subject, interface, and educational model; the shared repository keeps their source code and documentation together.
 
-## Modules
+**Collection portal:** [human-body-hub.pages.dev](https://human-body-hub.pages.dev/)
 
-| Module | Subject | Status |
-| --- | --- | --- |
-| [TelomereClock](https://telomereclock.pages.dev/) | Telomeres, cell division, and ageing | Available |
-| [Heartbeat Lab](https://heartbeat-lab.pages.dev/) | Heart, circulation, and blood pressure | Available |
-| Neuro Map | Neurons, synapses, and memory | Available |
-| Immune Arena | Innate defences, antibodies, and vaccines | Available |
+**Source repository:** [github.com/Dev-Djelloul/HumanBody](https://github.com/Dev-Djelloul/HumanBody)
 
-The collection portal links to the modules. Keeping the source in one repository does not combine their code or simulations. Neuro Map and Immune Arena are available from `/modules/neuro-map/` and `/modules/immune-arena/`.
+## The collection
 
-## Project structure
+| # | Module | Explore | Subject |
+| --- | --- | --- | --- |
+| 01 | TelomereClock | [Open module](https://telomereclock.pages.dev/) | Telomeres, cell division, telomerase, and cellular ageing |
+| 02 | Heartbeat Lab | [Open module](https://heartbeat-lab.pages.dev/) | The cardiac cycle, blood flow, cardiac output, and blood pressure |
+| 03 | Neuro Map | [Open module](https://human-body-hub.pages.dev/modules/neuro-map/) | Neurons, electrical and chemical signalling, synapses, and plasticity |
+| 04 | Immune Arena | [Open module](https://human-body-hub.pages.dev/modules/immune-arena/) | Barrier defences, innate and adaptive immunity, antibodies, and immune memory |
+
+All four modules are available in French and English. TelomereClock and Heartbeat Lab have their own Cloudflare Pages addresses; Neuro Map and Immune Arena are currently served from paths under the collection portal.
+
+## Modules at a glance
+
+### TelomereClock
+
+A React application for exploring telomere shortening through cell divisions, telomerase scenarios, lifestyle factors, cellular senescence, and related educational material. Its simulations are explanatory models, not predictions about an individual.
+
+### Heartbeat Lab
+
+A static, interactive introduction to the four phases of the cardiac cycle, blood flow through the heart, and simplified relationships between heart rate, cardiac output, vascular resistance, and mean pressure.
+
+### Neuro Map
+
+A static, bilingual experience tracing a signal through a neuron and across a synapse. Interactive anatomy highlights and a qualitative plasticity analogy introduce how connections can change with experience.
+
+### Immune Arena
+
+A static, bilingual walkthrough of barrier defences and the innate and adaptive immune responses. It includes a step-by-step schematic response and a qualitative comparison of immune responses with and without relevant immune memory.
+
+## Repository layout
 
 ```text
-index.html                      Human Body collection portal
-modules/
-  telomereclock/                React/Vite educational application
-  heartbeat-lab/                Dependency-free cardiac-cycle module
-  neuro-map/                    Dependency-free neuron and synapse module
-  immune-arena/                 Dependency-free immune-system module
-README.md
+.
+├── index.html                    Human Body collection portal
+├── modules/
+│   ├── telomereclock/            React/Vite module
+│   ├── heartbeat-lab/            Static cardiac-cycle module
+│   ├── neuro-map/                Static neuron and synapse module
+│   └── immune-arena/             Static immune-system module
+└── README.md
 ```
 
-## Run and test modules locally
+Each module is self-contained. Static modules use HTML, CSS, and JavaScript ES modules; they do not require a package installation or build step. TelomereClock uses React and Vite.
 
-The collection portal is a static HTML site with no package dependencies. Open `index.html` in a browser or serve the repository root with any local static HTTP server.
+## Run locally
 
-TelomereClock:
+### Prerequisites
+
+- Node.js 18 or later and npm for tests; TelomereClock also uses Node.js and npm for development and production builds.
+- A local static HTTP server to preview the portal and static modules. Python 3 is one option.
+
+From the repository root, serve the collection and the three static modules hosted beneath it:
 
 ```bash
-cd modules/telomereclock
-npm ci
-npm test
-npm run dev
-npm run build
+python3 -m http.server 8000
 ```
 
-Heartbeat Lab:
+Then open [http://localhost:8000](http://localhost:8000). The static module routes are:
+
+- `/modules/heartbeat-lab/`
+- `/modules/neuro-map/`
+- `/modules/immune-arena/`
+
+To run the model tests for the static modules from the repository root:
 
 ```bash
-cd modules/heartbeat-lab
-npm test
+npm --prefix modules/heartbeat-lab test
+npm --prefix modules/neuro-map test
+npm --prefix modules/immune-arena test
 ```
 
-Heartbeat Lab is static HTML/CSS/JavaScript; serve its directory with any local static HTTP server to preview it.
-
-Neuro Map:
+TelomereClock has its own Vite development server. Install dependencies and start it from the repository root:
 
 ```bash
-cd modules/neuro-map
-npm test
+npm --prefix modules/telomereclock install
+npm --prefix modules/telomereclock run dev
 ```
 
-Neuro Map is static HTML/CSS/JavaScript; serve its directory with any local static HTTP server to preview it.
-
-Immune Arena:
+Vite prints the local development URL. Run the TelomereClock tests and production build from the repository root with:
 
 ```bash
-cd modules/immune-arena
-npm test
+npm --prefix modules/telomereclock test
+npm --prefix modules/telomereclock run build
 ```
 
-Immune Arena is static HTML/CSS/JavaScript; serve its directory with any local static HTTP server to preview it.
+The generated production site is written to `modules/telomereclock/dist/`.
 
-## Deploy
+## Production deployments
 
-The portal, TelomereClock, and Heartbeat Lab use separate Cloudflare Pages projects connected to this repository. Each Pages project uses its own root directory and build settings:
+The collection portal, TelomereClock, and Heartbeat Lab are published through separate Cloudflare Pages projects connected to this monorepo. The two newer modules are served as static files from the collection site's root deployment.
 
-| Pages project | Root directory | Build command | Output directory |
-| --- | --- | --- | --- |
-| `human-body-hub` | `/` | *(none)* | `/` |
-| `telomereclock` | `modules/telomereclock` | `npm run build` | `dist` |
-| `heartbeat-lab` | `modules/heartbeat-lab` | *(none)* | `/` |
+| Site | Production URL | Pages root directory | Build command | Output directory |
+| --- | --- | --- | --- | --- |
+| Human Body portal, Neuro Map, and Immune Arena | [human-body-hub.pages.dev](https://human-body-hub.pages.dev/) | `/` | None | `/` |
+| TelomereClock | [telomereclock.pages.dev](https://telomereclock.pages.dev/) | `modules/telomereclock` | `npm run build` | `dist` |
+| Heartbeat Lab | [heartbeat-lab.pages.dev](https://heartbeat-lab.pages.dev/) | `modules/heartbeat-lab` | None | `/` |
 
-Pushes to `main` can trigger builds for all connected projects. Cloudflare Pages supports this monorepo setup; configure build watch paths later if avoiding unrelated builds becomes useful.
-Neuro Map is currently served from the collection site's `/modules/neuro-map/` path. To deploy it as a separate Pages project, use `modules/neuro-map` as the root directory, no build command, and `/` as the output directory.
-Immune Arena is currently served from `/modules/immune-arena/` in the collection site. To deploy it separately, use `modules/immune-arena` as the root directory, no build command, and `/` as the output directory.
+Production deployments are configured from the `main` branch. A push can trigger builds for the connected Pages projects. Neuro Map and Immune Arena do not currently have separate Pages projects or separate production domains. If either is later deployed independently, use its module directory as the Pages root, no build command, and `/` as the output directory.
 
-All modules are educational models, not medical diagnostic tools or personal health advice.
+## Educational scope
+
+These modules are designed for learning and exploration. Their diagrams and simulations simplify biological processes; they are not clinical measurements, personal predictions, diagnoses, treatment recommendations, or medical advice. Consult qualified health professionals for personal medical questions.
