@@ -7,7 +7,8 @@ export default {
 
   hero: {
     eyebrow: "TELOMERES · MODULE 01",
-    title: "Every division shortens the clock.",
+    titleLine1: "Every division",
+    titleLine2: "shortens the clock.",
     lede: "Telomeres are the TTAGGG repeat caps that protect the ends of your chromosomes. With each division they lose about 100 base pairs. Pick a cell type, divide it and watch what happens when the telomeres get too short."
   },
 

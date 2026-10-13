@@ -46,7 +46,10 @@ export default function SimulatorSection(p) {
           <span className="pulse" aria-hidden="true" />
           <span>{t('hero.eyebrow')}</span>
         </p>
-        <h1 id="t-sim" style={{ fontSize: 'clamp(1.7rem,4.4vw,3rem)', lineHeight: 1.1, maxWidth: '20ch' }}>{t('hero.title')}</h1>
+        <h1 id="t-sim" className="hero-title">
+          <span>{t('hero.titleLine1')}</span><br />
+          <span className="title-accent">{t('hero.titleLine2')}</span>
+        </h1>
         <p className="lede">{t('hero.lede')}</p>
       </div>
 
