@@ -1,6 +1,6 @@
 export default {
   nav: { aria: "Sections", sim: "Simulateur", telo: "Télomérase", life: "Mode de vie", history: "Histoire", know: "Savoirs", quiz: "Quiz", journal: "Journal" },
-  brand: { aria: "TelomereClock, retour au simulateur" },
+  brand: { homeAria: "Human Body, retour à la collection", collection: "← Collection" },
   hud: { length: "Longueur", div: "Divisions", loss: "Perte" },
   alertBadge: "ALERTE : cellules immortelles",
   unit: { bp: "pb", yearsShort: "ans" },

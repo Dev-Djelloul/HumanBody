@@ -65,6 +65,11 @@ button:disabled { cursor: not-allowed; }
 }
 .top-in { display: flex; align-items: center; gap: 1rem; padding-block: .7rem; flex-wrap: wrap; }
 .brand { display: flex; align-items: center; gap: .6rem; font-family: var(--f-display); font-size: .95rem; text-decoration: none; color: var(--text); }
+.brand-mark { display: grid; width: 2rem; height: 2rem; place-items: center; flex: 0 0 auto; border: 1px solid color-mix(in srgb, var(--glow) 40%, var(--line)); border-radius: 9px; background: color-mix(in srgb, var(--glow) 12%, var(--deck)); color: var(--glow); font-family: var(--f-data); font-size: .72rem; font-weight: 700; letter-spacing: -.04em; }
+.brand-divider { color: var(--mute); }
+.brand-module { color: var(--text); }
+.collection-link { color: var(--mute); text-decoration: none; font-size: .85rem; font-weight: 600; white-space: nowrap; }
+.collection-link:hover { color: var(--text); }
 .nav { display: flex; gap: .25rem; margin-left: auto; flex-wrap: wrap; }
 .nav a { color: var(--mute); text-decoration: none; padding: .35rem .7rem; border-radius: 999px; font-size: .9rem; font-weight: 500; }
 .nav a:hover { color: var(--text); background: var(--deck-2); }
