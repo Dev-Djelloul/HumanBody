@@ -12,7 +12,7 @@ export default function Header({ sim, rate, progress, onJournal }) {
         <a className="brand" href="https://human-body-hub.pages.dev/" aria-label={t('brand.homeAria')}>
           <img className="brand-logo" src="https://human-body-hub.pages.dev/assets/brand/human-body-logo.svg" alt="" aria-hidden="true" />
           <span className="brand-divider" aria-hidden="true">/</span>
-          <span className="brand-module">TelomereClock</span>
+          <span className="brand-module">Telomere Clock</span>
         </a>
         <a className="collection-link" href="https://human-body-hub.pages.dev/">{t('brand.collection')}</a>
         <div className="hud mono" aria-hidden="true">

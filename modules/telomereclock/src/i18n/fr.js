@@ -6,6 +6,7 @@ export default {
   unit: { bp: "pb", yearsShort: "ans" },
 
   hero: {
+    eyebrow: "TÉLOMÈRES · MODULE 01",
     title: "Chaque division raccourcit l’horloge.",
     lede: "Les télomères sont les capuchons répétés TTAGGG qui protègent l’extrémité de vos chromosomes. À chaque division ils perdent environ 100 paires de bases. Choisissez un type de cellule, divisez-la et regardez ce qui se passe quand les télomères deviennent trop courts."
   },

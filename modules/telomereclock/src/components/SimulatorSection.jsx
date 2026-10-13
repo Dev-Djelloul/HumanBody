@@ -42,6 +42,10 @@ export default function SimulatorSection(p) {
   return (
     <section id="sim" aria-labelledby="t-sim" style={{ display: 'grid', gap: '1.5rem' }}>
       <div style={{ display: 'grid', gap: '.8rem' }}>
+        <p className="eyebrow" style={{ margin: 0 }}>
+          <span className="pulse" aria-hidden="true" />
+          <span>{t('hero.eyebrow')}</span>
+        </p>
         <h1 id="t-sim" style={{ fontSize: 'clamp(1.7rem,4.4vw,3rem)', lineHeight: 1.1, maxWidth: '20ch' }}>{t('hero.title')}</h1>
         <p className="lede">{t('hero.lede')}</p>
       </div>
