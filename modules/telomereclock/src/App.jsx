@@ -136,7 +136,7 @@ export default function App() {
   return (
     <>
       <Header sim={sim} rate={rate} progress={progress} onJournal={() => setJournal(true)} />
-      <main className="wrap" style={{ display: 'grid', gap: '5rem', paddingTop: '2.2rem' }}>
+      <main className="wrap app-main" style={{ display: 'grid', gap: '5rem' }}>
         <div style={{ display: 'grid', gap: '2rem' }}>
           <SimulatorSection
             sim={sim} ctrl={ctrl} type={type} compare={compare} rate={rate} ctrlRate={ctrlRate}

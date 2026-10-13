@@ -41,7 +41,7 @@ export default function SimulatorSection(p) {
 
   return (
     <section id="sim" aria-labelledby="t-sim" style={{ display: 'grid', gap: '1.5rem' }}>
-      <div style={{ display: 'grid', gap: '.8rem' }}>
+      <div className="hero-intro">
         <p className="eyebrow" style={{ margin: 0 }}>
           <span className="pulse" aria-hidden="true" />
           <span>{t('hero.eyebrow')}</span>
