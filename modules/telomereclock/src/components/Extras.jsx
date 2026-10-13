@@ -35,7 +35,7 @@ export function Hub() {
       <div style={{ display: 'grid', gap: '.7rem' }}>
         <h2 id="t-hub">{t('hub.title')}</h2>
         <p className="lede">{t('hub.lede')}</p>
-        <a className="btn btn-ghost" href="https://human-body-hub.pages.dev/" target="_blank" rel="noopener noreferrer" style={{ justifySelf: 'start', textDecoration: 'none' }}>
+        <a className="btn btn-ghost" href="https://human-body-hub.pages.dev/" style={{ justifySelf: 'start', textDecoration: 'none' }}>
           {t('hub.portal')}
         </a>
       </div>

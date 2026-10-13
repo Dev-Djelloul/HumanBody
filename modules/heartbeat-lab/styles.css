@@ -33,7 +33,7 @@ a { color: inherit; }
 .collection-link, .footer a { color: var(--muted); font-size: 13px; text-decoration: none; }
 .collection-link:hover, .footer a:hover { color: var(--mint); }
 .lang-toggle, .icon-button, .reset-button, .preset-button, .phase-tab { border: 1px solid var(--line); background: transparent; cursor: pointer; }
-.lang-toggle { border-radius: 999px; padding: 8px 12px; color: var(--muted); font: 600 11px "JetBrains Mono", monospace; }
+.lang-toggle { border-radius: 999px; padding: 8px 13px; color: var(--muted); font: 600 12px "JetBrains Mono", monospace; }
 .lang-toggle:hover, .lang-toggle:focus-visible { border-color: var(--mint); color: var(--mint); }
 .subnav { border-top: 1px solid rgb(41 49 75 / 65%); }
 .subnav-inner { min-height: 48px; display: flex; align-items: center; gap: 16px; }

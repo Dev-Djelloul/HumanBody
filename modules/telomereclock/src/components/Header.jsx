@@ -30,11 +30,14 @@ export default function Header({ sim, rate, progress, onJournal }) {
             <button type="button" className="chip" onClick={onJournal} aria-label={t('journal.title')}>
               <span aria-hidden="true">★</span> {t('nav.journal')} <b className="mono">{progress.count}/{progress.total}</b>
             </button>
-            <div className="lang" role="group" aria-label="Langue / Language">
-              {['fr', 'en'].map(l => (
-                <button key={l} type="button" aria-pressed={lang === l} onClick={() => setLang(l)}>{l.toUpperCase()}</button>
-              ))}
-            </div>
+            <button
+              type="button"
+              className="lang-toggle"
+              aria-label={lang === 'fr' ? 'Switch to English' : 'Passer en français'}
+              onClick={() => setLang(lang === 'fr' ? 'en' : 'fr')}
+            >
+              {lang === 'fr' ? 'EN' : 'FR'}
+            </button>
           </div>
         </div>
       </div>
