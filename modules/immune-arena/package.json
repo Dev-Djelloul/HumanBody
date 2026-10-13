@@ -1,0 +1,8 @@
+{
+  "name": "immune-arena",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node model.test.mjs"
+  }
+}

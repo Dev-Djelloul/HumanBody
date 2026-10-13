@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="Explore les défenses immunitaires, les anticorps et la mémoire immunitaire avec des modèles interactifs.">
+  <title>Immune Arena — Human Body</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="https://human-body-hub.pages.dev/" aria-label="Human Body, retour à la collection" data-fr-aria-label="Human Body, retour à la collection" data-en-aria-label="Human Body, back to the collection">
+        <span class="brand-mark" aria-hidden="true">HB</span>
+        <span>Human Body <span class="brand-divider">/</span> <span class="brand-module">Immune Arena</span></span>
+      </a>
+      <a class="collection-link" href="https://human-body-hub.pages.dev/" data-fr="← Collection" data-en="← Collection">← Collection</a>
+    </div>
+    <div class="subnav">
+      <div class="wrap subnav-inner">
+        <nav class="module-nav" aria-label="Navigation du module" data-fr-aria-label="Navigation du module" data-en-aria-label="Module navigation">
+          <a href="#barrier" data-fr="Barrières" data-en="Barriers">Barrières</a>
+          <a href="#innate" data-fr="Immunité innée" data-en="Innate immunity">Immunité innée</a>
+          <a href="#adaptive" data-fr="Immunité adaptative" data-en="Adaptive immunity">Immunité adaptative</a>
+          <a href="#memory" data-fr="Mémoire" data-en="Memory">Mémoire</a>
+          <a href="#sources" data-fr="Sources" data-en="Sources">Sources</a>
+        </nav>
+        <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch to English">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow"><span class="pulse" aria-hidden="true"></span><span data-fr="DÉFENSES IMMUNITAIRES · MODULE 04" data-en="IMMUNE DEFENCES · MODULE 04">DÉFENSES IMMUNITAIRES · MODULE 04</span></p>
+      <h1 id="page-title"><span data-fr="Une rencontre," data-en="An encounter,">Une rencontre,</span><br><span class="title-accent" data-fr="une défense coordonnée." data-en="a coordinated defence.">une défense coordonnée.</span></h1>
+      <p class="hero-copy" data-fr="Découvre comment les barrières, les cellules de l’immunité innée et les défenses adaptatives coopèrent — et pourquoi la mémoire immunitaire compte." data-en="Explore how barriers, innate immune cells, and adaptive defences work together — and why immune memory matters.">Découvre comment les barrières, les cellules de l’immunité innée et les défenses adaptatives coopèrent — et pourquoi la mémoire immunitaire compte.</p>
+    </section>
+
+    <section class="section" id="barrier" aria-labelledby="barrier-title">
+      <div class="section-heading">
+        <div>
+          <p class="kicker" data-fr="01 / PREMIÈRE LIGNE" data-en="01 / FIRST LINE">01 / PREMIÈRE LIGNE</p>
+          <h2 id="barrier-title" data-fr="La défense commence aux frontières" data-en="Defence starts at the boundaries">La défense commence aux frontières</h2>
+        </div>
+        <span class="section-index">01 — 03</span>
+      </div>
+      <div class="barrier-grid">
+        <article class="panel barrier-card">
+          <span class="barrier-icon" aria-hidden="true">◉</span>
+          <h3 data-fr="Peau" data-en="Skin">Peau</h3>
+          <p data-fr="Une barrière physique qui limite l’entrée de nombreux agents infectieux." data-en="A physical barrier that helps prevent many infectious agents from entering.">Une barrière physique qui limite l’entrée de nombreux agents infectieux.</p>
+        </article>
+        <article class="panel barrier-card">
+          <span class="barrier-icon" aria-hidden="true">≋</span>
+          <h3 data-fr="Muqueuses" data-en="Mucous membranes">Muqueuses</h3>
+          <p data-fr="Le mucus et des mécanismes locaux piègent ou évacuent une partie des particules." data-en="Mucus and local mechanisms trap or clear some particles.">Le mucus et des mécanismes locaux piègent ou évacuent une partie des particules.</p>
+        </article>
+        <article class="panel barrier-card">
+          <span class="barrier-icon" aria-hidden="true">◇</span>
+          <h3 data-fr="Défenses chimiques" data-en="Chemical defences">Défenses chimiques</h3>
+          <p data-fr="Des substances présentes sur les surfaces du corps peuvent freiner certains microbes." data-en="Substances on body surfaces can inhibit some microbes.">Des substances présentes sur les surfaces du corps peuvent freiner certains microbes.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="innate" aria-labelledby="innate-title">
+      <div class="section-heading">
+        <div>
+          <p class="kicker" data-fr="02 / LA RÉPONSE INNÉE" data-en="02 / THE INNATE RESPONSE">02 / LA RÉPONSE INNÉE</p>
+          <h2 id="innate-title" data-fr="Une alerte rapide et coordonnée" data-en="A rapid, coordinated alert">Une alerte rapide et coordonnée</h2>
+        </div>
+        <span class="section-index">02 — 03</span>
+      </div>
+      <div class="response-layout">
+        <article class="panel response-panel">
+          <div class="response-toolbar">
+            <span class="live-label"><span class="live-dot" aria-hidden="true"></span><span data-fr="SUIVEZ LES ÉTAPES" data-en="FOLLOW THE STEPS">SUIVEZ LES ÉTAPES</span></span>
+            <button class="action-button" id="advance-response" type="button" data-fr="Lancer la réponse" data-en="Start the response">Lancer la réponse</button>
+          </div>
+          <div class="arena" id="arena" data-stage="0" role="img" aria-label="Vue schématique d’une réponse immunitaire" data-fr-aria-label="Vue schématique d’une réponse immunitaire" data-en-aria-label="Schematic view of an immune response">
+            <div class="tissue" aria-hidden="true">
+              <span class="tissue-cell"></span><span class="tissue-cell"></span><span class="tissue-cell"></span><span class="tissue-cell"></span>
+              <span class="pathogen" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+              <span class="phagocyte" aria-hidden="true"><i></i></span>
+              <span class="helper-cell" aria-hidden="true">T</span>
+              <span class="b-cell" aria-hidden="true">B</span>
+              <span class="antibody antibody-one" aria-hidden="true">Y</span>
+              <span class="antibody antibody-two" aria-hidden="true">Y</span>
+              <span class="antibody antibody-three" aria-hidden="true">Y</span>
+            </div>
+            <div class="arena-caption">
+              <span class="stage-counter" id="stage-counter">00 / 04</span>
+              <span class="stage-name" id="stage-name" aria-live="polite">À la rencontre d’un agent infectieux</span>
+            </div>
+          </div>
+          <div class="stage-progress" role="group" aria-label="Étapes de la réponse" data-fr-aria-label="Étapes de la réponse" data-en-aria-label="Response stages">
+            <span class="stage-dot is-current" data-stage-dot="0"></span>
+            <span class="stage-dot" data-stage-dot="1"></span>
+            <span class="stage-dot" data-stage-dot="2"></span>
+            <span class="stage-dot" data-stage-dot="3"></span>
+            <span class="stage-dot" data-stage-dot="4"></span>
+          </div>
+          <p class="stage-description" id="stage-description" aria-live="polite">Les barrières constituent la première protection. Si un agent infectieux les franchit, d’autres défenses peuvent s’activer.</p>
+          <div class="response-controls">
+            <button class="text-button" id="reset-response" type="button" disabled data-fr="Recommencer" data-en="Start over">Recommencer</button>
+          </div>
+        </article>
+        <aside class="panel insight-panel">
+          <span class="insight-icon" aria-hidden="true">✳</span>
+          <p class="kicker" data-fr="À RETENIR" data-en="KEY IDEA">À RETENIR</p>
+          <h3 data-fr="Innée ne veut pas dire isolée" data-en="Innate does not mean isolated">Innée ne veut pas dire isolée</h3>
+          <p data-fr="L’immunité innée reconnaît rapidement des motifs communs à des familles de microbes. Elle contribue aussi à alerter et orienter la réponse adaptative." data-en="Innate immunity quickly recognizes patterns shared by groups of microbes. It also helps alert and guide the adaptive response.">L’immunité innée reconnaît rapidement des motifs communs à des familles de microbes. Elle contribue aussi à alerter et orienter la réponse adaptative.</p>
+          <p class="small-note" data-fr="Le parcours animé est schématique : les réactions réelles se chevauchent et varient selon l’agent infectieux et la personne." data-en="This animation is schematic: real responses overlap and vary with the infectious agent and the person.">Le parcours animé est schématique : les réactions réelles se chevauchent et varient selon l’agent infectieux et la personne.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="adaptive" aria-labelledby="adaptive-title">
+      <div class="section-heading">
+        <div>
+          <p class="kicker" data-fr="03 / LA RÉPONSE ADAPTATIVE" data-en="03 / THE ADAPTIVE RESPONSE">03 / LA RÉPONSE ADAPTATIVE</p>
+          <h2 id="adaptive-title" data-fr="Reconnaître, cibler, se souvenir" data-en="Recognize, target, remember">Reconnaître, cibler, se souvenir</h2>
+        </div>
+      </div>
+      <div class="adaptive-grid">
+        <article class="panel adaptive-card">
+          <div class="cell-badge b-badge" aria-hidden="true">B</div>
+          <p class="kicker" data-fr="LYMPHOCYTES B" data-en="B LYMPHOCYTES">LYMPHOCYTES B</p>
+          <h3 data-fr="Des anticorps adaptés à une cible" data-en="Antibodies matched to a target">Des anticorps adaptés à une cible</h3>
+          <div class="antibody-visual" aria-hidden="true"><span class="antigen"></span><span class="antibody-shape">Y</span><span class="antibody-shape">Y</span><span class="antibody-shape">Y</span></div>
+          <p data-fr="Après activation, certains lymphocytes B deviennent des plasmocytes qui sécrètent des anticorps reconnaissant un antigène précis." data-en="After activation, some B lymphocytes become plasma cells that secrete antibodies recognizing a specific antigen.">Après activation, certains lymphocytes B deviennent des plasmocytes qui sécrètent des anticorps reconnaissant un antigène précis.</p>
+        </article>
+        <article class="panel adaptive-card">
+          <div class="cell-badge t-badge" aria-hidden="true">T</div>
+          <p class="kicker" data-fr="LYMPHOCYTES T" data-en="T LYMPHOCYTES">LYMPHOCYTES T</p>
+          <h3 data-fr="Coordonner et éliminer" data-en="Coordinate and eliminate">Coordonner et éliminer</h3>
+          <div class="t-cell-visual" aria-hidden="true"><span class="target-cell"></span><span class="t-cell">T</span><span class="signal-arrow">→</span></div>
+          <p data-fr="Des lymphocytes T auxiliaires coordonnent des réponses. Certains lymphocytes T cytotoxiques détruisent des cellules infectées." data-en="Helper T cells coordinate responses. Some cytotoxic T cells destroy infected cells.">Des lymphocytes T auxiliaires coordonnent des réponses. Certains lymphocytes T cytotoxiques détruisent des cellules infectées.</p>
+        </article>
+      </div>
+      <p class="science-note" data-fr="Les anticorps ne détruisent pas tous directement les agents infectieux : ils peuvent les neutraliser ou faciliter leur élimination par d’autres mécanismes." data-en="Antibodies do not all directly destroy infectious agents: they can neutralize them or help other mechanisms remove them.">Les anticorps ne détruisent pas tous directement les agents infectieux : ils peuvent les neutraliser ou faciliter leur élimination par d’autres mécanismes.</p>
+    </section>
+
+    <section class="section" id="memory" aria-labelledby="memory-title">
+      <div class="section-heading">
+        <div>
+          <p class="kicker" data-fr="04 / LA MÉMOIRE IMMUNITAIRE" data-en="04 / IMMUNE MEMORY">04 / LA MÉMOIRE IMMUNITAIRE</p>
+          <h2 id="memory-title" data-fr="Une première rencontre, puis une autre" data-en="First encounter, then another">Une première rencontre, puis une autre</h2>
+        </div>
+        <span class="section-index">04 — 04</span>
+      </div>
+      <article class="panel memory-panel">
+        <div class="memory-intro">
+          <p class="kicker" data-fr="COMPARE LES SCHÉMAS" data-en="COMPARE THE DIAGRAMS">COMPARE LES SCHÉMAS</p>
+          <h3 data-fr="Que change la mémoire ?" data-en="What changes with memory?">Que change la mémoire ?</h3>
+          <p data-fr="Choisis un scénario pour comparer, de façon qualitative, une première réponse et une réponse lorsque des cellules mémoire pertinentes sont présentes." data-en="Choose a scenario to qualitatively compare a first response with one where relevant memory cells are present.">Choisis un scénario pour comparer, de façon qualitative, une première réponse et une réponse lorsque des cellules mémoire pertinentes sont présentes.</p>
+          <div class="scenario-controls" role="group" aria-label="Scénario de comparaison" data-fr-aria-label="Scénario de comparaison" data-en-aria-label="Comparison scenario">
+            <button class="scenario-button is-active" type="button" data-scenario="first" aria-pressed="true" data-fr="Première rencontre" data-en="First encounter">Première rencontre</button>
+            <button class="scenario-button" type="button" data-scenario="memory" aria-pressed="false" data-fr="Avec mémoire" data-en="With memory">Avec mémoire</button>
+          </div>
+        </div>
+        <div class="comparison" id="comparison" data-scenario="first">
+          <div class="response-card">
+            <div class="response-card-heading"><span data-fr="Délai illustré" data-en="Illustrated delay">Délai illustré</span><span class="response-symbol">◷</span></div>
+            <div class="response-track"><span class="response-bar delay-bar"></span></div>
+            <p class="response-caption" id="delay-caption">La réponse adaptative primaire se met en place progressivement.</p>
+          </div>
+          <div class="response-card">
+            <div class="response-card-heading"><span data-fr="Réponse adaptative" data-en="Adaptive response">Réponse adaptative</span><span class="response-symbol">⌁</span></div>
+            <div class="response-track"><span class="response-bar strength-bar"></span></div>
+            <p class="response-caption" id="strength-caption">Des lymphocytes spécifiques doivent être activés et se multiplier.</p>
+          </div>
+          <p class="qualitative-label" data-fr="COMPARAISON QUALITATIVE · PAS UNE MESURE" data-en="QUALITATIVE COMPARISON · NOT A MEASUREMENT">COMPARAISON QUALITATIVE · PAS UNE MESURE</p>
+        </div>
+      </article>
+      <p class="science-note" data-fr="La vaccination expose le système immunitaire à une cible sous une forme choisie pour entraîner sa reconnaissance. La protection, sa durée et la réponse varient selon le vaccin, l’agent infectieux et la personne." data-en="Vaccination presents the immune system with a target in a form chosen to train recognition. Protection, its duration, and the response vary with the vaccine, infectious agent, and person.">La vaccination expose le système immunitaire à une cible sous une forme choisie pour entraîner sa reconnaissance. La protection, sa durée et la réponse varient selon le vaccin, l’agent infectieux et la personne.</p>
+    </section>
+
+    <section class="section sources-section" id="sources" aria-labelledby="sources-title">
+      <div class="section-heading">
+        <div>
+          <p class="kicker" data-fr="POUR ALLER PLUS LOIN" data-en="FURTHER READING">POUR ALLER PLUS LOIN</p>
+          <h2 id="sources-title" data-fr="Sources et repères" data-en="Sources and further reading">Sources et repères</h2>
+        </div>
+      </div>
+      <ul class="source-list">
+        <li><a href="https://openstax.org/books/anatomy-and-physiology-2e/pages/21-1-anatomy-of-the-lymphatic-and-immune-systems" target="_blank" rel="noopener noreferrer">OpenStax Anatomy and Physiology 2e — <span data-fr="Anatomie des systèmes lymphatique et immunitaire" data-en="Anatomy of the Lymphatic and Immune Systems">Anatomie des systèmes lymphatique et immunitaire</span></a></li>
+        <li><a href="https://openstax.org/books/anatomy-and-physiology-2e/pages/21-2-barrier-defenses-and-the-innate-immune-response" target="_blank" rel="noopener noreferrer">OpenStax Anatomy and Physiology 2e — <span data-fr="Barrières et réponse immunitaire innée" data-en="Barrier Defenses and the Innate Immune Response">Barrières et réponse immunitaire innée</span></a></li>
+        <li><a href="https://openstax.org/books/anatomy-and-physiology-2e/pages/21-5-the-immune-response-against-pathogens" target="_blank" rel="noopener noreferrer">OpenStax Anatomy and Physiology 2e — <span data-fr="La réponse immunitaire contre les agents pathogènes" data-en="The Immune Response against Pathogens">La réponse immunitaire contre les agents pathogènes</span></a></li>
+        <li><a href="https://www.who.int/news-room/questions-and-answers/item/vaccines-and-immunization-what-is-vaccination" target="_blank" rel="noopener noreferrer">OMS — <span data-fr="Vaccins et vaccination" data-en="Vaccines and immunization">Vaccins et vaccination</span></a></li>
+      </ul>
+    </section>
+  </main>
+  <footer class="wrap footer">
+    <span>Immune Arena · Human Body</span>
+    <span data-fr="Un modèle pédagogique, pas un outil de diagnostic ni un conseil médical." data-en="An educational model, not a diagnostic tool or medical advice.">Un modèle pédagogique, pas un outil de diagnostic ni un conseil médical.</span>
+  </footer>
+</body>
+</html>
